@@ -1,0 +1,148 @@
+/* RESET & BASE VARIABLES */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f4f7f9; color: #2c3e50; line-height: 1.6; }
+a { text-decoration: none; }
+
+/* MODERN NAVBAR - Premium Blended Dark Theme */
+.navbar { 
+    /* Starts dark blue at the top, drops in opacity, and blends directly into the dashboard color at the bottom */
+    background: linear-gradient(to bottom, rgba(30, 60, 114, 1) 0%, rgba(42, 82, 152, 0.85) 65%, rgba(244, 247, 249, 1) 100%);
+    padding: 15px 50px 25px 50px; /* Extra padding at the bottom gives room for the fade out */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    /* Removed the box-shadow so there is no harsh line */
+}
+
+.navbar .brand a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px; 
+    font-weight: 800; 
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: baseline;
+}
+
+.navbar .brand .authors {
+    font-size: 13px;
+    color: #93c5fd; /* Soft light blue so it doesn't distract from the main logo */
+    font-weight: 500;
+    margin-left: 10px;
+    letter-spacing: 0;
+}
+
+/* Nav Links Styling */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.nav-links a:not(.dropdown-content a) { 
+    color: #e2e8f0; 
+    font-weight: 600; 
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease; 
+}
+
+.nav-links a:not(.dropdown-content a):hover { 
+    color: #ffffff; 
+    background: rgba(255, 255, 255, 0.15); /* Premium translucent pill hover */
+}
+
+/* LAYOUT & CONTAINERS */
+.container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+.card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 4px solid #3498db; margin-bottom: 25px; transition: transform 0.2s; }
+.card:hover { transform: translateY(-3px); }
+
+/* FORMS & INPUTS */
+.form-group { margin-bottom: 20px; }
+label { display: block; font-weight: 600; margin-bottom: 8px; color: #34495e; }
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea { width: 100%; padding: 12px; border: 1px solid #dcdde1; border-radius: 8px; font-size: 15px; transition: border-color 0.3s; background: #fbfcfc; }
+input:focus, select:focus, textarea:focus { border-color: #3498db; outline: none; box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1); }
+
+/* BUTTONS */
+.btn { display: inline-block; background: #3498db; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; text-align: center; font-size: 15px;}
+.btn:hover { background: #2980b9; box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3); }
+.btn-success { background: #2ecc71; }
+.btn-success:hover { background: #27ae60; }
+.btn-danger { background: #e74c3c; }
+.btn-danger:hover { background: #c0392b; }
+
+/* TABLES & LISTS */
+.data-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+.data-table th { background-color: #f8f9fa; color: #2c3e50; }
+
+/* UTILITIES */
+.text-center { text-align: center; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* --- USER DROPDOWN MENU --- */
+.user-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.user-badge {
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.3s;
+    font-size: 14px;
+}
+
+.user-badge:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dropdown-content {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 10px;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: max-content;
+    z-index: 9999;
+    
+    /* Hides the menu by default and adds a smooth slide-down fade */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Reveals the menu when hovering over the parent container */
+.user-menu:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Button styles inside the dropdown */
+.dropdown-content a {
+    margin: 0 !important;
+    font-weight: 600;
+}
+
+.dropdown-content .edit-btn { color: #3498db !important; }
+.dropdown-content .edit-btn:hover { color: #2980b9 !important; }
+
+.dropdown-content .logout-btn { color: #e74c3c !important; }
+.dropdown-content .logout-btn:hover { color: #c0392b !important; }
